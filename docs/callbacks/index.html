@@ -1,0 +1,2636 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Callbacks - JScript Panel 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#on_always_on_top_changedstate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="JScript Panel 3" class="md-header__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JScript Panel 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Callbacks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../gallery/" class="md-tabs__link">
+      Gallery
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Docs
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="JScript Panel 3" class="md-nav__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    JScript Panel 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Requirements & Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-window/" class="md-nav__link">
+        Configuration Window
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changes/" class="md-nav__link">
+        Changes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        Tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preprocessors/" class="md-nav__link">
+        Preprocessors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flags/" class="md-nav__link">
+        Flags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Callbacks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Callbacks
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#on_always_on_top_changedstate" class="md-nav__link">
+    on_always_on_top_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_charcode" class="md-nav__link">
+    on_char(code)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_colours_changed" class="md-nav__link">
+    on_colours_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_cursor_follow_playback_changedstate" class="md-nav__link">
+    on_cursor_follow_playback_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_download_file_donepath-success-error_text" class="md-nav__link">
+    on_download_file_done(path, success, error_text)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_dropaction-x-y-mask" class="md-nav__link">
+    on_drag_drop(action, x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_enteraction-x-y-mask" class="md-nav__link">
+    on_drag_enter(action, x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_leave" class="md-nav__link">
+    on_drag_leave()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_overaction-x-y-mask" class="md-nav__link">
+    on_drag_over(action, x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_dsp_preset_changed" class="md-nav__link">
+    on_dsp_preset_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_focusis_focused" class="md-nav__link">
+    on_focus(is_focused)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_font_changed" class="md-nav__link">
+    on_font_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_get_album_art_donehandle-art_id-image" class="md-nav__link">
+    on_get_album_art_done(handle, art_id, image)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_http_request_donetask_id-success-content" class="md-nav__link">
+    on_http_request_done(task_id, success, content)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_item_focus_changeplaylistindex-from-to" class="md-nav__link">
+    on_item_focus_change(playlistIndex, from, to)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_item_playedhandle" class="md-nav__link">
+    on_item_played(handle)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_key_downvkey" class="md-nav__link">
+    on_key_down(vkey)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_key_upvkey" class="md-nav__link">
+    on_key_up(vkey)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_library_items_addedhandle_list" class="md-nav__link">
+    on_library_items_added(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_library_items_changedhandle_list" class="md-nav__link">
+    on_library_items_changed(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_library_items_removedhandle_list" class="md-nav__link">
+    on_library_items_removed(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_load_image_doneimage_path-image" class="md-nav__link">
+    on_load_image_done(image_path, image)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_locations_addedtask_id-handle_list" class="md-nav__link">
+    on_locations_added(task_id, handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_metadb_changedhandle_list" class="md-nav__link">
+    on_metadb_changed(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_lbtn_dblclkx-y-mask" class="md-nav__link">
+    on_mouse_lbtn_dblclk(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_lbtn_downx-y-mask" class="md-nav__link">
+    on_mouse_lbtn_down(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_lbtn_upx-y-mask" class="md-nav__link">
+    on_mouse_lbtn_up(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_leave" class="md-nav__link">
+    on_mouse_leave()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_mbtn_dblclkx-y-mask" class="md-nav__link">
+    on_mouse_mbtn_dblclk(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_mbtn_downx-y-mask" class="md-nav__link">
+    on_mouse_mbtn_down(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_mbtn_upx-y-mask" class="md-nav__link">
+    on_mouse_mbtn_up(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_movex-y-mask" class="md-nav__link">
+    on_mouse_move(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_rbtn_dblclkx-y-mask" class="md-nav__link">
+    on_mouse_rbtn_dblclk(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_rbtn_downx-y-mask" class="md-nav__link">
+    on_mouse_rbtn_down(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_rbtn_upx-y-mask" class="md-nav__link">
+    on_mouse_rbtn_up(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_wheelstep" class="md-nav__link">
+    on_mouse_wheel(step)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_wheel_hstep" class="md-nav__link">
+    on_mouse_wheel_h(step)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_notify_dataname-info" class="md-nav__link">
+    on_notify_data(name, info)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_output_device_changed" class="md-nav__link">
+    on_output_device_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_paintgr" class="md-nav__link">
+    on_paint(gr)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_follow_cursor_changedstate" class="md-nav__link">
+    on_playback_follow_cursor_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_dynamic_info" class="md-nav__link">
+    on_playback_dynamic_info()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_dynamic_info_tracktype" class="md-nav__link">
+    on_playback_dynamic_info_track(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_editedhandle" class="md-nav__link">
+    on_playback_edited(handle)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_new_trackhandle" class="md-nav__link">
+    on_playback_new_track(handle)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_order_changednew_order_index" class="md-nav__link">
+    on_playback_order_changed(new_order_index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_pausestate" class="md-nav__link">
+    on_playback_pause(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_queue_changedorigin" class="md-nav__link">
+    on_playback_queue_changed(origin)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_seektime" class="md-nav__link">
+    on_playback_seek(time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_startingcmd-is_paused" class="md-nav__link">
+    on_playback_starting(cmd, is_paused)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_stopreason" class="md-nav__link">
+    on_playback_stop(reason)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_timetime" class="md-nav__link">
+    on_playback_time(time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_addedplaylistindex" class="md-nav__link">
+    on_playlist_items_added(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_removedplaylistindex-new_count" class="md-nav__link">
+    on_playlist_items_removed(playlistIndex, new_count)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_reorderedplaylistindex" class="md-nav__link">
+    on_playlist_items_reordered(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_selection_change" class="md-nav__link">
+    on_playlist_items_selection_change()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_stop_after_current_changedstate" class="md-nav__link">
+    on_playlist_stop_after_current_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_switch" class="md-nav__link">
+    on_playlist_switch()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlists_changed" class="md-nav__link">
+    on_playlists_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_replaygain_mode_changednew_mode" class="md-nav__link">
+    on_replaygain_mode_changed(new_mode)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_script_unload" class="md-nav__link">
+    on_script_unload()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_selection_changed" class="md-nav__link">
+    on_selection_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_size" class="md-nav__link">
+    on_size()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_volume_changevolume" class="md-nav__link">
+    on_volume_change(volume)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Interfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Interfaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Interfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IContextMenuManager/" class="md-nav__link">
+        IContextMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IDropAction/" class="md-nav__link">
+        IDropAction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IFileInfo/" class="md-nav__link">
+        IFileInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IJSGraphics/" class="md-nav__link">
+        IJSGraphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IJSImage/" class="md-nav__link">
+        IJSImage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMainMenuManager/" class="md-nav__link">
+        IMainMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMenuObj/" class="md-nav__link">
+        IMenuObj
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMetadbHandle/" class="md-nav__link">
+        IMetadbHandle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMetadbHandleList/" class="md-nav__link">
+        IMetadbHandleList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IPlayingItemLocation/" class="md-nav__link">
+        IPlayingItemLocation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IProfiler/" class="md-nav__link">
+        IProfiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ISelectionHolder/" class="md-nav__link">
+        ISelectionHolder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ITextLayout/" class="md-nav__link">
+        ITextLayout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IThemeManager/" class="md-nav__link">
+        IThemeManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ITitleFormat/" class="md-nav__link">
+        ITitleFormat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ITooltip/" class="md-nav__link">
+        ITooltip
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
+          Namespaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Namespaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Namespaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/console/" class="md-nav__link">
+        console
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/fb/" class="md-nav__link">
+        fb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/plman/" class="md-nav__link">
+        plman
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/window/" class="md-nav__link">
+        window
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#on_always_on_top_changedstate" class="md-nav__link">
+    on_always_on_top_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_charcode" class="md-nav__link">
+    on_char(code)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_colours_changed" class="md-nav__link">
+    on_colours_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_cursor_follow_playback_changedstate" class="md-nav__link">
+    on_cursor_follow_playback_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_download_file_donepath-success-error_text" class="md-nav__link">
+    on_download_file_done(path, success, error_text)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_dropaction-x-y-mask" class="md-nav__link">
+    on_drag_drop(action, x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_enteraction-x-y-mask" class="md-nav__link">
+    on_drag_enter(action, x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_leave" class="md-nav__link">
+    on_drag_leave()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_drag_overaction-x-y-mask" class="md-nav__link">
+    on_drag_over(action, x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_dsp_preset_changed" class="md-nav__link">
+    on_dsp_preset_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_focusis_focused" class="md-nav__link">
+    on_focus(is_focused)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_font_changed" class="md-nav__link">
+    on_font_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_get_album_art_donehandle-art_id-image" class="md-nav__link">
+    on_get_album_art_done(handle, art_id, image)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_http_request_donetask_id-success-content" class="md-nav__link">
+    on_http_request_done(task_id, success, content)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_item_focus_changeplaylistindex-from-to" class="md-nav__link">
+    on_item_focus_change(playlistIndex, from, to)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_item_playedhandle" class="md-nav__link">
+    on_item_played(handle)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_key_downvkey" class="md-nav__link">
+    on_key_down(vkey)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_key_upvkey" class="md-nav__link">
+    on_key_up(vkey)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_library_items_addedhandle_list" class="md-nav__link">
+    on_library_items_added(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_library_items_changedhandle_list" class="md-nav__link">
+    on_library_items_changed(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_library_items_removedhandle_list" class="md-nav__link">
+    on_library_items_removed(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_load_image_doneimage_path-image" class="md-nav__link">
+    on_load_image_done(image_path, image)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_locations_addedtask_id-handle_list" class="md-nav__link">
+    on_locations_added(task_id, handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_metadb_changedhandle_list" class="md-nav__link">
+    on_metadb_changed(handle_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_lbtn_dblclkx-y-mask" class="md-nav__link">
+    on_mouse_lbtn_dblclk(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_lbtn_downx-y-mask" class="md-nav__link">
+    on_mouse_lbtn_down(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_lbtn_upx-y-mask" class="md-nav__link">
+    on_mouse_lbtn_up(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_leave" class="md-nav__link">
+    on_mouse_leave()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_mbtn_dblclkx-y-mask" class="md-nav__link">
+    on_mouse_mbtn_dblclk(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_mbtn_downx-y-mask" class="md-nav__link">
+    on_mouse_mbtn_down(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_mbtn_upx-y-mask" class="md-nav__link">
+    on_mouse_mbtn_up(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_movex-y-mask" class="md-nav__link">
+    on_mouse_move(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_rbtn_dblclkx-y-mask" class="md-nav__link">
+    on_mouse_rbtn_dblclk(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_rbtn_downx-y-mask" class="md-nav__link">
+    on_mouse_rbtn_down(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_rbtn_upx-y-mask" class="md-nav__link">
+    on_mouse_rbtn_up(x, y, mask)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_wheelstep" class="md-nav__link">
+    on_mouse_wheel(step)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_mouse_wheel_hstep" class="md-nav__link">
+    on_mouse_wheel_h(step)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_notify_dataname-info" class="md-nav__link">
+    on_notify_data(name, info)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_output_device_changed" class="md-nav__link">
+    on_output_device_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_paintgr" class="md-nav__link">
+    on_paint(gr)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_follow_cursor_changedstate" class="md-nav__link">
+    on_playback_follow_cursor_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_dynamic_info" class="md-nav__link">
+    on_playback_dynamic_info()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_dynamic_info_tracktype" class="md-nav__link">
+    on_playback_dynamic_info_track(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_editedhandle" class="md-nav__link">
+    on_playback_edited(handle)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_new_trackhandle" class="md-nav__link">
+    on_playback_new_track(handle)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_order_changednew_order_index" class="md-nav__link">
+    on_playback_order_changed(new_order_index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_pausestate" class="md-nav__link">
+    on_playback_pause(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_queue_changedorigin" class="md-nav__link">
+    on_playback_queue_changed(origin)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_seektime" class="md-nav__link">
+    on_playback_seek(time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_startingcmd-is_paused" class="md-nav__link">
+    on_playback_starting(cmd, is_paused)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_stopreason" class="md-nav__link">
+    on_playback_stop(reason)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playback_timetime" class="md-nav__link">
+    on_playback_time(time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_addedplaylistindex" class="md-nav__link">
+    on_playlist_items_added(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_removedplaylistindex-new_count" class="md-nav__link">
+    on_playlist_items_removed(playlistIndex, new_count)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_reorderedplaylistindex" class="md-nav__link">
+    on_playlist_items_reordered(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_items_selection_change" class="md-nav__link">
+    on_playlist_items_selection_change()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_stop_after_current_changedstate" class="md-nav__link">
+    on_playlist_stop_after_current_changed(state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlist_switch" class="md-nav__link">
+    on_playlist_switch()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_playlists_changed" class="md-nav__link">
+    on_playlists_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_replaygain_mode_changednew_mode" class="md-nav__link">
+    on_replaygain_mode_changed(new_mode)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_script_unload" class="md-nav__link">
+    on_script_unload()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_selection_changed" class="md-nav__link">
+    on_selection_changed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_size" class="md-nav__link">
+    on_size()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on_volume_changevolume" class="md-nav__link">
+    on_volume_change(volume)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Callbacks</h1>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should only use callbacks that contain code
+you want to run.</p>
+<p>It's not good practice to include empty callbacks like this:
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">on_always_on_top_changed</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</div>
+<h2 id="on_always_on_top_changedstate"><code>on_always_on_top_changed(state)</code><a class="headerlink" href="#on_always_on_top_changedstate" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when <code>Always On Top</code> state is changed.</p>
+<h2 id="on_charcode"><code>on_char(code)</code><a class="headerlink" href="#on_charcode" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td><code>number</code></td>
+<td>UTF16 encoded char</td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_colours_changed"><code>on_colours_changed()</code><a class="headerlink" href="#on_colours_changed" title="Permanent link">#</a></h2>
+<p>Called when colours are changed via Default UI/Columns UI preferences.</p>
+<h2 id="on_cursor_follow_playback_changedstate"><code>on_cursor_follow_playback_changed(state)</code><a class="headerlink" href="#on_cursor_follow_playback_changedstate" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when <code>Cursor follow playback</code> state is changed.</p>
+<h2 id="on_download_file_donepath-success-error_text"><code>on_download_file_done(path, success, error_text)</code><a class="headerlink" href="#on_download_file_donepath-success-error_text" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td><code>string</code></td>
+<td>The path that was originally supplied to <a href="../namespaces/utils/#utilsdownloadfileasyncwindow_id-url-path">utils.DownloadFileAsync</a>.</td>
+</tr>
+<tr>
+<td>success</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code> it means the web request was succesful and the file was saved correctly.</td>
+</tr>
+<tr>
+<td>error_text</td>
+<td><code>string</code></td>
+<td>Empty if success is <code>true</code>. If success is <code>false</code>, it should describe what went wrong.</td>
+</tr>
+</tbody>
+</table>
+<p>Called when thread created by <a href="../namespaces/utils/#utilsdownloadfileasyncwindow_id-url-path">utils.DownloadFileAsync</a> is done.</p>
+<h2 id="on_drag_dropaction-x-y-mask"><code>on_drag_drop(action, x, y, mask)</code><a class="headerlink" href="#on_drag_dropaction-x-y-mask" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td><a href="../interfaces/IDropAction">IDropAction</a></td>
+<td></td>
+</tr>
+<tr>
+<td>x</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>y</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>mask</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_drag_enteraction-x-y-mask"><code>on_drag_enter(action, x, y, mask)</code><a class="headerlink" href="#on_drag_enteraction-x-y-mask" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td><a href="../interfaces/IDropAction">IDropAction</a></td>
+<td></td>
+</tr>
+<tr>
+<td>x</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>y</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>mask</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_drag_leave"><code>on_drag_leave()</code><a class="headerlink" href="#on_drag_leave" title="Permanent link">#</a></h2>
+<h2 id="on_drag_overaction-x-y-mask"><code>on_drag_over(action, x, y, mask)</code><a class="headerlink" href="#on_drag_overaction-x-y-mask" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td><a href="../interfaces/IDropAction">IDropAction</a></td>
+<td></td>
+</tr>
+<tr>
+<td>x</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>y</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>mask</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_dsp_preset_changed"><code>on_dsp_preset_changed()</code><a class="headerlink" href="#on_dsp_preset_changed" title="Permanent link">#</a></h2>
+<p>Called when DSP preset changes but does not get called when presets are added or removed.</p>
+<h2 id="on_focusis_focused"><code>on_focus(is_focused)</code><a class="headerlink" href="#on_focusis_focused" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is_focused</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when the panel gets/loses focus.</p>
+<h2 id="on_font_changed"><code>on_font_changed()</code><a class="headerlink" href="#on_font_changed" title="Permanent link">#</a></h2>
+<p>Called when fonts are changed via Default UI/Columns UI preferences.</p>
+<h2 id="on_get_album_art_donehandle-art_id-image"><code>on_get_album_art_done(handle, art_id, image)</code><a class="headerlink" href="#on_get_album_art_donehandle-art_id-image" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handle</td>
+<td><a href="../interfaces/IMetadbHandle">IMetadbHandle</a></td>
+<td></td>
+</tr>
+<tr>
+<td>art_id</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>image</td>
+<td><a href="../interfaces/IJSImage">IJSImage</a></td>
+<td>Could be <code>null</code> on failure.</td>
+</tr>
+</tbody>
+</table>
+<p>Called when thread created by <a href="../interfaces/IMetadbHandle/#getalbumartasyncwindow_id-art_id-want_stub">IMetadbHandle GetAlbumArtAsync</a> is done.</p>
+<h2 id="on_http_request_donetask_id-success-content"><code>on_http_request_done(task_id, success, content)</code><a class="headerlink" href="#on_http_request_donetask_id-success-content" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td><code>number</code></td>
+<td>The return value from the original <a href="../namespaces/utils/#utilshttprequestasyncwindow_id-type-url-user_agent_or_headers-post_data-content_type">utils.HTTPRequestAsync</a> call.</td>
+</tr>
+<tr>
+<td>success</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, it doesn't necessarily mean http status 200 but it indicates the request was completed succesfully so the response text is from the server.</td>
+</tr>
+<tr>
+<td>content</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when thread created by <a href="../namespaces/utils/#utilshttprequestasyncwindow_id-type-url-user_agent_or_headers-post_data-content_type">utils.HTTPRequestAsync</a> is done.</p>
+<h2 id="on_item_focus_changeplaylistindex-from-to"><code>on_item_focus_change(playlistIndex, from, to)</code><a class="headerlink" href="#on_item_focus_changeplaylistindex-from-to" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>from</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>to</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when playlist focus has changed.</p>
+<h2 id="on_item_playedhandle"><code>on_item_played(handle)</code><a class="headerlink" href="#on_item_playedhandle" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handle</td>
+<td><a href="../interfaces/IMetadbHandle">IMetadbHandle</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when at least one minute of the track has been played or the track has reached its end after at least one third of it has been played.</p>
+<h2 id="on_key_downvkey"><code>on_key_down(vkey)</code><a class="headerlink" href="#on_key_downvkey" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vkey</td>
+<td><code>number</code></td>
+<td><a href="https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes">https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Keyboard shortcuts defined in the main preferences are always executed first and are not passed to this callback.</p>
+<h2 id="on_key_upvkey"><code>on_key_up(vkey)</code><a class="headerlink" href="#on_key_upvkey" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vkey</td>
+<td><code>number</code></td>
+<td><a href="https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes">https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_library_items_addedhandle_list"><code>on_library_items_added(handle_list)</code><a class="headerlink" href="#on_library_items_addedhandle_list" title="Permanent link">#</a></h2>
+<h2 id="on_library_items_changedhandle_list"><code>on_library_items_changed(handle_list)</code><a class="headerlink" href="#on_library_items_changedhandle_list" title="Permanent link">#</a></h2>
+<h2 id="on_library_items_removedhandle_list"><code>on_library_items_removed(handle_list)</code><a class="headerlink" href="#on_library_items_removedhandle_list" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handle_list</td>
+<td><a href="../interfaces/IMetadbHandleList">IMetadbHandleList</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_load_image_doneimage_path-image"><code>on_load_image_done(image_path, image)</code><a class="headerlink" href="#on_load_image_doneimage_path-image" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image_path</td>
+<td><code>string</code></td>
+<td>The path that was originally supplied to <a href="../namespaces/utils/#utilsloadimageasyncwindow_id-path">utils.LoadImageAsync</a>.</td>
+</tr>
+<tr>
+<td>image</td>
+<td><a href="../interfaces/IJSImage">IJSImage</a></td>
+<td>Could be <code>null</code> on failure.</td>
+</tr>
+</tbody>
+</table>
+<p>Called when thread created by <a href="../namespaces/utils/#utilsloadimageasyncwindow_id-path">utils.LoadImageAsync</a> is done.</p>
+<h2 id="on_locations_addedtask_id-handle_list"><code>on_locations_added(task_id, handle_list)</code><a class="headerlink" href="#on_locations_addedtask_id-handle_list" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td><code>number</code></td>
+<td>The return value from the original <a href="../namespaces/fb/#fbaddlocationsasyncwindow_id-paths">fb.AddLocationsAsync</a> call.</td>
+</tr>
+<tr>
+<td>handle_list</td>
+<td><a href="../interfaces/IMetadbHandleList">IMetadbHandleList</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when thread created by <a href="../namespaces/fb/#fbaddlocationsasyncwindow_id-paths">fb.AddLocationsAsync</a> is done.</p>
+<h2 id="on_metadb_changedhandle_list"><code>on_metadb_changed(handle_list)</code><a class="headerlink" href="#on_metadb_changedhandle_list" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handle_list</td>
+<td><a href="../interfaces/IMetadbHandleList">IMetadbHandleList</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when metadb contents change. This can be tag updates or database changes from <a href="https://www.foobar2000.org/components/view/foo_playcount">foo_playcount</a>, etc.</p>
+<h2 id="on_mouse_lbtn_dblclkx-y-mask"><code>on_mouse_lbtn_dblclk(x, y, mask)</code><a class="headerlink" href="#on_mouse_lbtn_dblclkx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_lbtn_downx-y-mask"><code>on_mouse_lbtn_down(x, y, mask)</code><a class="headerlink" href="#on_mouse_lbtn_downx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_lbtn_upx-y-mask"><code>on_mouse_lbtn_up(x, y, mask)</code><a class="headerlink" href="#on_mouse_lbtn_upx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_leave"><code>on_mouse_leave()</code><a class="headerlink" href="#on_mouse_leave" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_mbtn_dblclkx-y-mask"><code>on_mouse_mbtn_dblclk(x, y, mask)</code><a class="headerlink" href="#on_mouse_mbtn_dblclkx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_mbtn_downx-y-mask"><code>on_mouse_mbtn_down(x, y, mask)</code><a class="headerlink" href="#on_mouse_mbtn_downx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_mbtn_upx-y-mask"><code>on_mouse_mbtn_up(x, y, mask)</code><a class="headerlink" href="#on_mouse_mbtn_upx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_movex-y-mask"><code>on_mouse_move(x, y, mask)</code><a class="headerlink" href="#on_mouse_movex-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_rbtn_dblclkx-y-mask"><code>on_mouse_rbtn_dblclk(x, y, mask)</code><a class="headerlink" href="#on_mouse_rbtn_dblclkx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_rbtn_downx-y-mask"><code>on_mouse_rbtn_down(x, y, mask)</code><a class="headerlink" href="#on_mouse_rbtn_downx-y-mask" title="Permanent link">#</a></h2>
+<h2 id="on_mouse_rbtn_upx-y-mask"><code>on_mouse_rbtn_up(x, y, mask)</code><a class="headerlink" href="#on_mouse_rbtn_upx-y-mask" title="Permanent link">#</a></h2>
+<p>You must return <code>true</code> if you want to suppress the default context menu. Use the <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-windows">Win</kbd></span> keys to bypass user code and open default context menu.</p>
+<h2 id="on_mouse_wheelstep"><code>on_mouse_wheel(step)</code><a class="headerlink" href="#on_mouse_wheelstep" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>step</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_mouse_wheel_hstep"><code>on_mouse_wheel_h(step)</code><a class="headerlink" href="#on_mouse_wheel_hstep" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>step</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_notify_dataname-info"><code>on_notify_data(name, info)</code><a class="headerlink" href="#on_notify_dataname-info" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>info</td>
+<td><code>string</code>, <code>number</code>, <code>array</code>, <code>object</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called in other panels after <a href="../namespaces/window/#windownotifyothersname-info">window.NotifyOthers</a> is executed.</p>
+<h2 id="on_output_device_changed"><code>on_output_device_changed()</code><a class="headerlink" href="#on_output_device_changed" title="Permanent link">#</a></h2>
+<p>Called when output device changes.</p>
+<h2 id="on_paintgr"><code>on_paint(gr)</code><a class="headerlink" href="#on_paintgr" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gr</td>
+<td><a href="../interfaces/IJSGraphics">IJSGraphics</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when window is ready to draw.</p>
+<h2 id="on_playback_follow_cursor_changedstate"><code>on_playback_follow_cursor_changed(state)</code><a class="headerlink" href="#on_playback_follow_cursor_changedstate" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when <code>Playback follow cursor</code> state is changed.</p>
+<h2 id="on_playback_dynamic_info"><code>on_playback_dynamic_info()</code><a class="headerlink" href="#on_playback_dynamic_info" title="Permanent link">#</a></h2>
+<p>Called when dynamic info such as VBR bitrate changes.</p>
+<h2 id="on_playback_dynamic_info_tracktype"><code>on_playback_dynamic_info_track(type)</code><a class="headerlink" href="#on_playback_dynamic_info_tracktype" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><code>number</code></td>
+<td><code>0</code> stream metadata update, <code>1</code> stream album art update</td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_playback_editedhandle"><code>on_playback_edited(handle)</code><a class="headerlink" href="#on_playback_editedhandle" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handle</td>
+<td><a href="../interfaces/IMetadbHandle">IMetadbHandle</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when currently playing file gets edited.</p>
+<h2 id="on_playback_new_trackhandle"><code>on_playback_new_track(handle)</code><a class="headerlink" href="#on_playback_new_trackhandle" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handle</td>
+<td><a href="../interfaces/IMetadbHandle">IMetadbHandle</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_playback_order_changednew_order_index"><code>on_playback_order_changed(new_order_index)</code><a class="headerlink" href="#on_playback_order_changednew_order_index" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new_order_index</td>
+<td><a href="../flags/#playbackorder">PlaybackOrder</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when playback order is changed.</p>
+<h2 id="on_playback_pausestate"><code>on_playback_pause(state)</code><a class="headerlink" href="#on_playback_pausestate" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_playback_queue_changedorigin"><code>on_playback_queue_changed(origin)</code><a class="headerlink" href="#on_playback_queue_changedorigin" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>origin</td>
+<td><a href="../flags/#playbackqueueorigin">PlaybackQueueOrigin</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_playback_seektime"><code>on_playback_seek(time)</code><a class="headerlink" href="#on_playback_seektime" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_playback_startingcmd-is_paused"><code>on_playback_starting(cmd, is_paused)</code><a class="headerlink" href="#on_playback_startingcmd-is_paused" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmd</td>
+<td><a href="../flags/#playbackstartingcmd">PlaybackStartingCMD</a></td>
+<td></td>
+</tr>
+<tr>
+<td>is_paused</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_playback_stopreason"><code>on_playback_stop(reason)</code><a class="headerlink" href="#on_playback_stopreason" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reason</td>
+<td><a href="../flags/#playbackstopreason">PlaybackStopReason</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_playback_timetime"><code>on_playback_time(time)</code><a class="headerlink" href="#on_playback_timetime" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called every second for time display.</p>
+<h2 id="on_playlist_items_addedplaylistindex"><code>on_playlist_items_added(playlistIndex)</code><a class="headerlink" href="#on_playlist_items_addedplaylistindex" title="Permanent link">#</a></h2>
+<h2 id="on_playlist_items_removedplaylistindex-new_count"><code>on_playlist_items_removed(playlistIndex, new_count)</code><a class="headerlink" href="#on_playlist_items_removedplaylistindex-new_count" title="Permanent link">#</a></h2>
+<h2 id="on_playlist_items_reorderedplaylistindex"><code>on_playlist_items_reordered(playlistIndex)</code><a class="headerlink" href="#on_playlist_items_reorderedplaylistindex" title="Permanent link">#</a></h2>
+<h2 id="on_playlist_items_selection_change"><code>on_playlist_items_selection_change()</code><a class="headerlink" href="#on_playlist_items_selection_change" title="Permanent link">#</a></h2>
+<p>Workaround for some 3rd party playlist viewers not working with <a href="#on_selection_changed">on_selection_changed</a>.</p>
+<h2 id="on_playlist_stop_after_current_changedstate"><code>on_playlist_stop_after_current_changed(state)</code><a class="headerlink" href="#on_playlist_stop_after_current_changedstate" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Called when <code>Stop after current</code> state is changed.</p>
+<h2 id="on_playlist_switch"><code>on_playlist_switch()</code><a class="headerlink" href="#on_playlist_switch" title="Permanent link">#</a></h2>
+<h2 id="on_playlists_changed"><code>on_playlists_changed()</code><a class="headerlink" href="#on_playlists_changed" title="Permanent link">#</a></h2>
+<p>Called when</p>
+<ul>
+<li>playlists are added/removed/reordered/renamed.</li>
+<li>a playlist's lock status changes through the use of the built-in playlist lock methods or other components such as <a href="https://foosion.foobar2000.org/components/?id=utils&amp;version=0.6.2+beta+6">foo_utils</a> or <a href="https://www.foobar2000.org/components/view/foo_playlist_attributes">foo_playlist_attributes</a>.</li>
+</ul>
+<h2 id="on_replaygain_mode_changednew_mode"><code>on_replaygain_mode_changed(new_mode)</code><a class="headerlink" href="#on_replaygain_mode_changednew_mode" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new_mode</td>
+<td><a href="../flags/#replaygainmode">ReplaygainMode</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="on_script_unload"><code>on_script_unload()</code><a class="headerlink" href="#on_script_unload" title="Permanent link">#</a></h2>
+<p>Should always be called when:</p>
+<ul>
+<li>scripts are reloaded from the context menu / window.Reload</li>
+<li>the OK/Apply buttons are used in the Configure dialog.</li>
+<li>panels are removed/replaced in layout editing mode</li>
+<li><a href="https://foobar2000.org">foobar2000</a> exits normally</li>
+</ul>
+<p>It will not be called if a script throws an error or <a href="https://foobar2000.org">foobar2000</a> terminates abnormally.</p>
+<h2 id="on_selection_changed"><code>on_selection_changed()</code><a class="headerlink" href="#on_selection_changed" title="Permanent link">#</a></h2>
+<p>Called when selection changes based on <code>File&gt;Preferences&gt;Display&gt;Selection viewers</code>.</p>
+<h2 id="on_size"><code>on_size()</code><a class="headerlink" href="#on_size" title="Permanent link">#</a></h2>
+<p>Called when panel is resized.</p>
+<h2 id="on_volume_changevolume"><code>on_volume_change(volume)</code><a class="headerlink" href="#on_volume_changevolume" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>volume</td>
+<td><code>number</code></td>
+<td>Floating point value in dB. Minimum is <code>-100</code>, maximum is <code>0</code>.</td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../flags/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Flags" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Flags
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../interfaces/IContextMenuManager/" class="md-footer__link md-footer__link--next" aria-label="Next: IContextMenuManager" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              IContextMenuManager
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 marc2003
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/marc2k3" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

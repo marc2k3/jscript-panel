@@ -1,0 +1,1755 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>window - JScript Panel 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windowclearintervaltimerid" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="JScript Panel 3" class="md-header__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JScript Panel 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              window
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../gallery/" class="md-tabs__link">
+      Gallery
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Docs
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="JScript Panel 3" class="md-nav__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    JScript Panel 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Requirements & Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-window/" class="md-nav__link">
+        Configuration Window
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/" class="md-nav__link">
+        Changes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tips/" class="md-nav__link">
+        Tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preprocessors/" class="md-nav__link">
+        Preprocessors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flags/" class="md-nav__link">
+        Flags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../callbacks/" class="md-nav__link">
+        Callbacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Interfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Interfaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Interfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IContextMenuManager/" class="md-nav__link">
+        IContextMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IDropAction/" class="md-nav__link">
+        IDropAction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IFileInfo/" class="md-nav__link">
+        IFileInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IJSGraphics/" class="md-nav__link">
+        IJSGraphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IJSImage/" class="md-nav__link">
+        IJSImage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMainMenuManager/" class="md-nav__link">
+        IMainMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMenuObj/" class="md-nav__link">
+        IMenuObj
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMetadbHandle/" class="md-nav__link">
+        IMetadbHandle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMetadbHandleList/" class="md-nav__link">
+        IMetadbHandleList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IPlayingItemLocation/" class="md-nav__link">
+        IPlayingItemLocation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IProfiler/" class="md-nav__link">
+        IProfiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ISelectionHolder/" class="md-nav__link">
+        ISelectionHolder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ITextLayout/" class="md-nav__link">
+        ITextLayout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IThemeManager/" class="md-nav__link">
+        IThemeManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ITitleFormat/" class="md-nav__link">
+        ITitleFormat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ITooltip/" class="md-nav__link">
+        ITooltip
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
+          Namespaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Namespaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Namespaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../console/" class="md-nav__link">
+        console
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fb/" class="md-nav__link">
+        fb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plman/" class="md-nav__link">
+        plman
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          window
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        window
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windowclearintervaltimerid" class="md-nav__link">
+    window.ClearInterval(timerID)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcleartimeouttimerid" class="md-nav__link">
+    window.ClearTimeout(timerID)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcreatethememanagerclass_list" class="md-nav__link">
+    window.CreateThemeManager(class_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcreatepopupmenu" class="md-nav__link">
+    window.CreatePopupMenu()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcreatetooltipfont_name-font_size_px" class="md-nav__link">
+    window.CreateTooltip([font_name, font_size_px)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetcolourcuitype" class="md-nav__link">
+    window.GetColourCUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetcolourduitype" class="md-nav__link">
+    window.GetColourDUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetfontcuitype" class="md-nav__link">
+    window.GetFontCUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetfontduitype" class="md-nav__link">
+    window.GetFontDUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetpropertyname-default_value" class="md-nav__link">
+    window.GetProperty(name[, default_value])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windownotifyothersname-info" class="md-nav__link">
+    window.NotifyOthers(name, info)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowreloadclear_properties" class="md-nav__link">
+    window.Reload([clear_properties])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowrepaint" class="md-nav__link">
+    window.Repaint()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowrepaintrectx-y-w-h" class="md-nav__link">
+    window.RepaintRect(x, y, w, h)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsetcursorid" class="md-nav__link">
+    window.SetCursor(id)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsetintervalfunc-delay" class="md-nav__link">
+    window.SetInterval(func, delay)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsetpropertyname-value" class="md-nav__link">
+    window.SetProperty(name, value)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsettimeoutfunc-delay" class="md-nav__link">
+    window.SetTimeout(func, delay)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsettooltipfontfont_name-font_size_px" class="md-nav__link">
+    window.SetTooltipFont(font_name, font_size_px)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowshowconfigure" class="md-nav__link">
+    window.ShowConfigure()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowshowproperties" class="md-nav__link">
+    window.ShowProperties()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windowclearintervaltimerid" class="md-nav__link">
+    window.ClearInterval(timerID)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcleartimeouttimerid" class="md-nav__link">
+    window.ClearTimeout(timerID)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcreatethememanagerclass_list" class="md-nav__link">
+    window.CreateThemeManager(class_list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcreatepopupmenu" class="md-nav__link">
+    window.CreatePopupMenu()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowcreatetooltipfont_name-font_size_px" class="md-nav__link">
+    window.CreateTooltip([font_name, font_size_px)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetcolourcuitype" class="md-nav__link">
+    window.GetColourCUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetcolourduitype" class="md-nav__link">
+    window.GetColourDUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetfontcuitype" class="md-nav__link">
+    window.GetFontCUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetfontduitype" class="md-nav__link">
+    window.GetFontDUI(type)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowgetpropertyname-default_value" class="md-nav__link">
+    window.GetProperty(name[, default_value])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windownotifyothersname-info" class="md-nav__link">
+    window.NotifyOthers(name, info)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowreloadclear_properties" class="md-nav__link">
+    window.Reload([clear_properties])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowrepaint" class="md-nav__link">
+    window.Repaint()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowrepaintrectx-y-w-h" class="md-nav__link">
+    window.RepaintRect(x, y, w, h)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsetcursorid" class="md-nav__link">
+    window.SetCursor(id)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsetintervalfunc-delay" class="md-nav__link">
+    window.SetInterval(func, delay)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsetpropertyname-value" class="md-nav__link">
+    window.SetProperty(name, value)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsettimeoutfunc-delay" class="md-nav__link">
+    window.SetTimeout(func, delay)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowsettooltipfontfont_name-font_size_px" class="md-nav__link">
+    window.SetTooltipFont(font_name, font_size_px)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowshowconfigure" class="md-nav__link">
+    window.ShowConfigure()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowshowproperties" class="md-nav__link">
+    window.ShowProperties()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>window</h1>
+
+<p><strong>Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>window.DPI</td>
+<td><code>number</code></td>
+<td>read</td>
+<td>This value is fixed when <a href="https://foobar2000.org">foobar2000</a> starts. It will not change even if Windows display settings are updated.</td>
+</tr>
+<tr>
+<td>window.Height</td>
+<td><code>number</code></td>
+<td>read</td>
+<td></td>
+</tr>
+<tr>
+<td>window.ID</td>
+<td><code>number</code></td>
+<td>read</td>
+<td>Unique identifier for the panel. Use in various <code>async</code> methods.</td>
+</tr>
+<tr>
+<td>window.IsDark</td>
+<td><code>boolean</code></td>
+<td>read</td>
+<td>Can only be <code>true</code> if <code>Dark Mode</code> is enabled in <code>Columns UI v2.0.0</code> and later.</td>
+</tr>
+<tr>
+<td>window.IsDefaultUI</td>
+<td><code>boolean</code></td>
+<td>read</td>
+<td></td>
+</tr>
+<tr>
+<td>window.IsVisible</td>
+<td><code>boolean</code></td>
+<td>read</td>
+<td></td>
+</tr>
+<tr>
+<td>window.MaxHeight</td>
+<td><code>number</code></td>
+<td>read, write</td>
+<td></td>
+</tr>
+<tr>
+<td>window.MaxWidth</td>
+<td><code>number</code></td>
+<td>read, write</td>
+<td></td>
+</tr>
+<tr>
+<td>window.MinHeight</td>
+<td><code>number</code></td>
+<td>read, write</td>
+<td></td>
+</tr>
+<tr>
+<td>window.MinWidth</td>
+<td><code>number</code></td>
+<td>read, write</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../../preprocessors/#name">window.Name</a></td>
+<td><code>string</code></td>
+<td>read</td>
+<td></td>
+</tr>
+<tr>
+<td>window.Width</td>
+<td><code>number</code></td>
+<td>read</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods</strong></p>
+<h2 id="windowclearintervaltimerid"><code>window.ClearInterval(timerID)</code><a class="headerlink" href="#windowclearintervaltimerid" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timerID</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="windowcleartimeouttimerid"><code>window.ClearTimeout(timerID)</code><a class="headerlink" href="#windowcleartimeouttimerid" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timerID</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="windowcreatethememanagerclass_list"><code>window.CreateThemeManager(class_list)</code><a class="headerlink" href="#windowcreatethememanagerclass_list" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>class_list</td>
+<td><code>string</code></td>
+<td><a href="https://docs.microsoft.com/en-gb/windows/win32/controls/parts-and-states">https://docs.microsoft.com/en-gb/windows/win32/controls/parts-and-states</a></td>
+</tr>
+</tbody>
+</table>
+<p>Returns an <a href="../../interfaces/IThemeManager">IThemeManager</a> instance
+or <code>null</code> on failure.</p>
+<h2 id="windowcreatepopupmenu"><code>window.CreatePopupMenu()</code><a class="headerlink" href="#windowcreatepopupmenu" title="Permanent link">#</a></h2>
+<p>Returns an <a href="../../interfaces/IMenuObj">IMenuObj</a> instance.</p>
+<h2 id="windowcreatetooltipfont_name-font_size_px"><code>window.CreateTooltip([font_name, font_size_px)</code><a class="headerlink" href="#windowcreatetooltipfont_name-font_size_px" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>font_name</td>
+<td><code>string</code></td>
+<td>Default <code>Segoe UI</code>.</td>
+</tr>
+<tr>
+<td>font_size_px</td>
+<td><code>number</code></td>
+<td>Default <code>16</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns an <a href="../../interfaces/ITooltip">ITooltip</a> instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since it's not permitted to call this more than once
+in a panel, see the additional <a href="#windowsettooltipfontfont_name-font_size_px">window.SetTooltipFont</a>
+method too.</p>
+</div>
+<h2 id="windowgetcolourcuitype"><code>window.GetColourCUI(type)</code><a class="headerlink" href="#windowgetcolourcuitype" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="../../flags/#colourtypecui">ColourTypeCUI</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>number</code> which can used as the <code>colour</code> in many methods.</p>
+<h2 id="windowgetcolourduitype"><code>window.GetColourDUI(type)</code><a class="headerlink" href="#windowgetcolourduitype" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="../../flags/#colourtypedui">ColourTypeDUI</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>number</code> which can used as the <code>colour</code> in many methods.</p>
+<h2 id="windowgetfontcuitype"><code>window.GetFontCUI(type)</code><a class="headerlink" href="#windowgetfontcuitype" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="../../flags/#fonttypecui">FontTypeCUI</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>string</code> which can be passed directly to <a href="../../interfaces/IJSGraphics/#writetexttext-font-colour-x-y-w-h-text_alignment-paragraph_alignment-word_wrapping-trimming_granularity">IJSGraphics WriteText</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">GetFontCUI</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">on_paint</span><span class="p">(</span><span class="nx">gr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">gr</span><span class="p">.</span><span class="nx">WriteText</span><span class="p">(</span><span class="s2">&quot;some text&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">font</span><span class="p">,</span><span class="w"> </span><span class="nx">colour</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Width</span><span class="p">,</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Height</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<p>The string is actually stringified <code>JSON</code> so it may look something like this:</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Segoe UI&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Style&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<p>See <a href="../../flags/#dwrite_font_style">DWRITE_FONT_STYLE</a> and <a href="../../flags/#dwrite_font_weight">DWRITE_FONT_WEIGHT</a> for more info.</p>
+<p>If you want to access/change any properties, you can use <code>JSON.parse</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">GetFontCUI</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">font</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// double the size but keep other properties the same</span><span class="w"></span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">.</span><span class="nx">Size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// stringify the updated object</span><span class="w"></span>
+<span class="nx">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="windowgetfontduitype"><code>window.GetFontDUI(type)</code><a class="headerlink" href="#windowgetfontduitype" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="../../flags/#fonttypedui">FontTypeDUI</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>See above for the return value.</p>
+<h2 id="windowgetpropertyname-default_value"><code>window.GetProperty(name[, default_value])</code><a class="headerlink" href="#windowgetpropertyname-default_value" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>default_value</td>
+<td><code>string</code>,<code>number</code>,<code>boolean</code></td>
+<td>Default <code>null</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the value of <code>name</code> from the panel properties. If no value is
+present and <code>default_value</code> is not <code>null</code> or <code>undefined</code>, it will be
+stored and returned.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ==PREPROCESSOR==</span><span class="w"></span>
+<span class="c1">// @name &quot;ColourPicker + Persistent Properties&quot;</span><span class="w"></span>
+<span class="c1">// @author &quot;marc2003&quot;</span><span class="w"></span>
+<span class="c1">// @import &quot;%fb2k_component_path%helpers.txt&quot;</span><span class="w"></span>
+<span class="c1">// ==/PREPROCESSOR==</span><span class="w"></span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">default_colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">RGB</span><span class="p">(</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Default colour is used on first run, otherwise colour</span><span class="w"></span>
+<span class="c1">// saved on previous use.</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">GetProperty</span><span class="p">(</span><span class="s1">&#39;BASIC.COLOUR.PICKER.COLOUR&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">default_colour</span><span class="p">);</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">on_paint</span><span class="p">(</span><span class="nx">gr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">gr</span><span class="p">.</span><span class="nx">FillRectangle</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Width</span><span class="p">,</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Height</span><span class="p">,</span><span class="w"> </span><span class="nx">colour</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">gr</span><span class="p">.</span><span class="nx">FillRectangle</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Width</span><span class="p">,</span><span class="w"> </span><span class="mf">24</span><span class="p">,</span><span class="w"> </span><span class="nx">RGB</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="nx">gr</span><span class="p">.</span><span class="nx">WriteText</span><span class="p">(</span><span class="s1">&#39;Click to open ColourPicker&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">RGB</span><span class="p">(</span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Width</span><span class="p">,</span><span class="w"> </span><span class="mf">24</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">on_mouse_lbtn_up</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">ColourPicker</span><span class="p">(</span><span class="nx">colour</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    Save the new colour and it will be read the next</span>
+<span class="cm">    time the script starts. These properties are stored</span>
+<span class="cm">    as part of your layout either in theme.fth (Default UI)</span>
+<span class="cm">    or foo_ui_columns.cfg (Columns UI),</span>
+<span class="cm">    */</span><span class="w"></span>
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">SetProperty</span><span class="p">(</span><span class="s1">&#39;BASIC.COLOUR.PICKER.COLOUR&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">colour</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">Repaint</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="windownotifyothersname-info"><code>window.NotifyOthers(name, info)</code><a class="headerlink" href="#windownotifyothersname-info" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>info</td>
+<td><code>string</code>, <code>number</code>, <code>array</code>, <code>object</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Listen for notifications in other panels with <a href="../../callbacks/#on_notify_dataname-info">on_notify_data</a>.</p>
+<h2 id="windowreloadclear_properties"><code>window.Reload([clear_properties])</code><a class="headerlink" href="#windowreloadclear_properties" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clear_properties</td>
+<td><code>boolean</code></td>
+<td>Default <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="windowrepaint"><code>window.Repaint()</code><a class="headerlink" href="#windowrepaint" title="Permanent link">#</a></h2>
+<p>No return value.</p>
+<h2 id="windowrepaintrectx-y-w-h"><code>window.RepaintRect(x, y, w, h)</code><a class="headerlink" href="#windowrepaintrectx-y-w-h" title="Permanent link">#</a></h2>
+<p>No return value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use this instead of <code>window.Repaint</code> on frequently updated areas
+such as time, bitrate, seekbar, etc.</p>
+</div>
+<h2 id="windowsetcursorid"><code>window.SetCursor(id)</code><a class="headerlink" href="#windowsetcursorid" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><a href="../../flags/#setcursor-values">SetCursorID</a></td>
+<td>Use <code>-1</code> if you want to hide the cursor.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This would usually be used inside the <a href="../../callbacks/#on_mouse_movex-y-mask">on_mouse_move</a> callback.</p>
+</div>
+<h2 id="windowsetintervalfunc-delay"><code>window.SetInterval(func, delay)</code><a class="headerlink" href="#windowsetintervalfunc-delay" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>function</td>
+<td><code>function</code></td>
+<td></td>
+</tr>
+<tr>
+<td>delay</td>
+<td><code>number</code></td>
+<td>milliseconds</td>
+</tr>
+</tbody>
+</table>
+<p>The return value is the <code>timerID</code> which can be used
+to cancel it.</p>
+<p>Creates a timer that will run indefinitely unless cancelled.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// This runs every 500ms forever because the return</span><span class="w"></span>
+<span class="c1">// was ignored!</span><span class="w"></span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">SetInterval</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// do something</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="windowsetpropertyname-value"><code>window.SetProperty(name, value)</code><a class="headerlink" href="#windowsetpropertyname-value" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><code>string</code>,<code>number</code>,<code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<p>Sets a persistent property value. To remove an existing property, you
+can supply <code>null</code> as the <code>value</code>.</p>
+<p>See <a href="#windowgetpropertyname-default_value">window.GetProperty</a> for an example.</p>
+<h2 id="windowsettimeoutfunc-delay"><code>window.SetTimeout(func, delay)</code><a class="headerlink" href="#windowsettimeoutfunc-delay" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>function</td>
+<td><code>function</code></td>
+<td></td>
+</tr>
+<tr>
+<td>delay</td>
+<td><code>number</code></td>
+<td>milliseconds</td>
+</tr>
+</tbody>
+</table>
+<p>The return value is the <code>timerID</code> which can be used
+to cancel it.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">SetTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// code here will run after 10 seconds, once.</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="mf">10000</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="windowsettooltipfontfont_name-font_size_px"><code>window.SetTooltipFont(font_name, font_size_px)</code><a class="headerlink" href="#windowsettooltipfontfont_name-font_size_px" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>font_name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>font_size_px</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="windowshowconfigure"><code>window.ShowConfigure()</code><a class="headerlink" href="#windowshowconfigure" title="Permanent link">#</a></h2>
+<p>No return value.</p>
+<p>Shows the <a href="../../configuration-window">Configuration Window</a>.</p>
+<h2 id="windowshowproperties"><code>window.ShowProperties()</code><a class="headerlink" href="#windowshowproperties" title="Permanent link">#</a></h2>
+<p>No return value.</p>
+<p>Shows the <code>Properties Window</code> of the current panel.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../utils/" class="md-footer__link md-footer__link--prev" aria-label="Previous: utils" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              utils
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 marc2003
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/marc2k3" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

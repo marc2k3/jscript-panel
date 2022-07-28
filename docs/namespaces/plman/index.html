@@ -1,0 +1,2877 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>plman - JScript Panel 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plmanaddlocationsplaylistindex-paths-select" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="JScript Panel 3" class="md-header__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JScript Panel 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              plman
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../gallery/" class="md-tabs__link">
+      Gallery
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Docs
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="JScript Panel 3" class="md-nav__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    JScript Panel 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Requirements & Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-window/" class="md-nav__link">
+        Configuration Window
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/" class="md-nav__link">
+        Changes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tips/" class="md-nav__link">
+        Tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preprocessors/" class="md-nav__link">
+        Preprocessors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flags/" class="md-nav__link">
+        Flags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../callbacks/" class="md-nav__link">
+        Callbacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Interfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Interfaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Interfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IContextMenuManager/" class="md-nav__link">
+        IContextMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IDropAction/" class="md-nav__link">
+        IDropAction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IFileInfo/" class="md-nav__link">
+        IFileInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IJSGraphics/" class="md-nav__link">
+        IJSGraphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IJSImage/" class="md-nav__link">
+        IJSImage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMainMenuManager/" class="md-nav__link">
+        IMainMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMenuObj/" class="md-nav__link">
+        IMenuObj
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMetadbHandle/" class="md-nav__link">
+        IMetadbHandle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IMetadbHandleList/" class="md-nav__link">
+        IMetadbHandleList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IPlayingItemLocation/" class="md-nav__link">
+        IPlayingItemLocation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IProfiler/" class="md-nav__link">
+        IProfiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ISelectionHolder/" class="md-nav__link">
+        ISelectionHolder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ITextLayout/" class="md-nav__link">
+        ITextLayout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/IThemeManager/" class="md-nav__link">
+        IThemeManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ITitleFormat/" class="md-nav__link">
+        ITitleFormat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/ITooltip/" class="md-nav__link">
+        ITooltip
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
+          Namespaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Namespaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Namespaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../console/" class="md-nav__link">
+        console
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fb/" class="md-nav__link">
+        fb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          plman
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        plman
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plmanaddlocationsplaylistindex-paths-select" class="md-nav__link">
+    plman.AddLocations(playlistIndex, paths[, select])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanaddplaylistlockplaylistindex-flags" class="md-nav__link">
+    plman.AddPlaylistLock(playlistIndex, flags)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanclearplaylistplaylistindex" class="md-nav__link">
+    plman.ClearPlaylist(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanclearplaylistselectionplaylistindex" class="md-nav__link">
+    plman.ClearPlaylistSelection(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmancreateautoplaylistplaylistindex-name-query-sort-flags" class="md-nav__link">
+    plman.CreateAutoPlaylist(playlistIndex, name, query[, sort, flags])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmancreateplaylistplaylistindex-name" class="md-nav__link">
+    plman.CreatePlaylist([playlistIndex, name])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanduplicateplaylistplaylistindex-name" class="md-nav__link">
+    plman.DuplicatePlaylist(playlistIndex, name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanexecuteplaylistdefaultactionplaylistindex-playlistitemindex" class="md-nav__link">
+    plman.ExecutePlaylistDefaultAction(playlistIndex, playlistItemIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanfindorcreateplaylistname-unlocked" class="md-nav__link">
+    plman.FindOrCreatePlaylist(name, unlocked)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanfindplaylistname" class="md-nav__link">
+    plman.FindPlaylist(name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplayingitemlocation" class="md-nav__link">
+    plman.GetPlayingItemLocation()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistfocusitemindexplaylistindex" class="md-nav__link">
+    plman.GetPlaylistFocusItemIndex(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistitemcountplaylistindex" class="md-nav__link">
+    plman.GetPlaylistItemCount(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistitemsplaylistindex" class="md-nav__link">
+    plman.GetPlaylistItems(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistlockfiltermaskplaylistindex" class="md-nav__link">
+    plman.GetPlaylistLockFilterMask(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistlocknameplaylistindex" class="md-nav__link">
+    plman.GetPlaylistLockName(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistnameplaylistindex" class="md-nav__link">
+    plman.GetPlaylistName(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistselecteditemsplaylistindex" class="md-nav__link">
+    plman.GetPlaylistSelectedItems(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetrecycleritemsindex" class="md-nav__link">
+    plman.GetRecyclerItems(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetrecyclernameindex" class="md-nav__link">
+    plman.GetRecyclerName(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmaninsertplaylistitemsplaylistindex-base-handle_list-select" class="md-nav__link">
+    plman.InsertPlaylistItems(playlistIndex, base, handle_list[, select])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmaninsertplaylistitemsfilterplaylistindex-base-handle_list-select" class="md-nav__link">
+    plman.InsertPlaylistItemsFilter(playlistIndex, base, handle_list[, select])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmaninvertselectionplaylistindex" class="md-nav__link">
+    plman.InvertSelection(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanisautoplaylistplaylistindex" class="md-nav__link">
+    plman.IsAutoPlaylist(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanisplaylistitemselectedplaylistindex-playlistitemindex" class="md-nav__link">
+    plman.IsPlaylistItemSelected(playlistIndex, playlistItemIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanisplaylistlockedplaylistindex" class="md-nav__link">
+    plman.IsPlaylistLocked(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanmoveplaylistfrom-to" class="md-nav__link">
+    plman.MovePlaylist(from, to)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanmoveplaylistselectionplaylistindex-delta" class="md-nav__link">
+    plman.MovePlaylistSelection(playlistIndex, delta)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanmoveplaylistselectionv2playlistindex-new_pos" class="md-nav__link">
+    plman.MovePlaylistSelectionV2(playlistIndex, new_pos)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanrecyclerpurgeaffecteditems" class="md-nav__link">
+    plman.RecyclerPurge(affectedItems)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanrecyclerrestoreindex" class="md-nav__link">
+    plman.RecyclerRestore(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistplaylistindex" class="md-nav__link">
+    plman.RemovePlaylist(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistlockplaylistindex" class="md-nav__link">
+    plman.RemovePlaylistLock(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistsplaylistindexes" class="md-nav__link">
+    plman.RemovePlaylists(playlistIndexes)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistselectionplaylistindex-crop" class="md-nav__link">
+    plman.RemovePlaylistSelection(playlistIndex[, crop])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistswitchplaylistindex" class="md-nav__link">
+    plman.RemovePlaylistSwitch(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanrenameplaylistplaylistindex-name" class="md-nav__link">
+    plman.RenamePlaylist(playlistIndex, name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetactiveplaylistcontext" class="md-nav__link">
+    plman.SetActivePlaylistContext()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetplaylistfocusitemplaylistindex-playlistitemindex" class="md-nav__link">
+    plman.SetPlaylistFocusItem(playlistIndex, playlistItemIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetplaylistselectionplaylistindex-affecteditems-state" class="md-nav__link">
+    plman.SetPlaylistSelection(playlistIndex, affectedItems, state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetplaylistselectionsingleplaylistindex-playlistitemindex-state" class="md-nav__link">
+    plman.SetPlaylistSelectionSingle(playlistIndex, playlistItemIndex, state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanshowautoplaylistuiplaylistindex" class="md-nav__link">
+    plman.ShowAutoPlaylistUI(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanshowplaylistlockuiplaylistindex" class="md-nav__link">
+    plman.ShowPlaylistLockUI(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansortbyformatplaylistindex-pattern-selected_items_only" class="md-nav__link">
+    plman.SortByFormat(playlistIndex, pattern[, selected_items_only])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansortbyformatv2playlistindex-pattern-direction" class="md-nav__link">
+    plman.SortByFormatV2(playlistIndex, pattern[, direction])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansortplaylistsbynamedirection" class="md-nav__link">
+    plman.SortPlaylistsByName([direction])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanundobackupplaylistindex" class="md-nav__link">
+    plman.UndoBackup(playlistIndex)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../window/" class="md-nav__link">
+        window
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plmanaddlocationsplaylistindex-paths-select" class="md-nav__link">
+    plman.AddLocations(playlistIndex, paths[, select])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanaddplaylistlockplaylistindex-flags" class="md-nav__link">
+    plman.AddPlaylistLock(playlistIndex, flags)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanclearplaylistplaylistindex" class="md-nav__link">
+    plman.ClearPlaylist(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanclearplaylistselectionplaylistindex" class="md-nav__link">
+    plman.ClearPlaylistSelection(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmancreateautoplaylistplaylistindex-name-query-sort-flags" class="md-nav__link">
+    plman.CreateAutoPlaylist(playlistIndex, name, query[, sort, flags])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmancreateplaylistplaylistindex-name" class="md-nav__link">
+    plman.CreatePlaylist([playlistIndex, name])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanduplicateplaylistplaylistindex-name" class="md-nav__link">
+    plman.DuplicatePlaylist(playlistIndex, name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanexecuteplaylistdefaultactionplaylistindex-playlistitemindex" class="md-nav__link">
+    plman.ExecutePlaylistDefaultAction(playlistIndex, playlistItemIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanfindorcreateplaylistname-unlocked" class="md-nav__link">
+    plman.FindOrCreatePlaylist(name, unlocked)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanfindplaylistname" class="md-nav__link">
+    plman.FindPlaylist(name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplayingitemlocation" class="md-nav__link">
+    plman.GetPlayingItemLocation()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistfocusitemindexplaylistindex" class="md-nav__link">
+    plman.GetPlaylistFocusItemIndex(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistitemcountplaylistindex" class="md-nav__link">
+    plman.GetPlaylistItemCount(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistitemsplaylistindex" class="md-nav__link">
+    plman.GetPlaylistItems(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistlockfiltermaskplaylistindex" class="md-nav__link">
+    plman.GetPlaylistLockFilterMask(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistlocknameplaylistindex" class="md-nav__link">
+    plman.GetPlaylistLockName(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistnameplaylistindex" class="md-nav__link">
+    plman.GetPlaylistName(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetplaylistselecteditemsplaylistindex" class="md-nav__link">
+    plman.GetPlaylistSelectedItems(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetrecycleritemsindex" class="md-nav__link">
+    plman.GetRecyclerItems(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmangetrecyclernameindex" class="md-nav__link">
+    plman.GetRecyclerName(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmaninsertplaylistitemsplaylistindex-base-handle_list-select" class="md-nav__link">
+    plman.InsertPlaylistItems(playlistIndex, base, handle_list[, select])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmaninsertplaylistitemsfilterplaylistindex-base-handle_list-select" class="md-nav__link">
+    plman.InsertPlaylistItemsFilter(playlistIndex, base, handle_list[, select])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmaninvertselectionplaylistindex" class="md-nav__link">
+    plman.InvertSelection(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanisautoplaylistplaylistindex" class="md-nav__link">
+    plman.IsAutoPlaylist(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanisplaylistitemselectedplaylistindex-playlistitemindex" class="md-nav__link">
+    plman.IsPlaylistItemSelected(playlistIndex, playlistItemIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanisplaylistlockedplaylistindex" class="md-nav__link">
+    plman.IsPlaylistLocked(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanmoveplaylistfrom-to" class="md-nav__link">
+    plman.MovePlaylist(from, to)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanmoveplaylistselectionplaylistindex-delta" class="md-nav__link">
+    plman.MovePlaylistSelection(playlistIndex, delta)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanmoveplaylistselectionv2playlistindex-new_pos" class="md-nav__link">
+    plman.MovePlaylistSelectionV2(playlistIndex, new_pos)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanrecyclerpurgeaffecteditems" class="md-nav__link">
+    plman.RecyclerPurge(affectedItems)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanrecyclerrestoreindex" class="md-nav__link">
+    plman.RecyclerRestore(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistplaylistindex" class="md-nav__link">
+    plman.RemovePlaylist(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistlockplaylistindex" class="md-nav__link">
+    plman.RemovePlaylistLock(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistsplaylistindexes" class="md-nav__link">
+    plman.RemovePlaylists(playlistIndexes)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistselectionplaylistindex-crop" class="md-nav__link">
+    plman.RemovePlaylistSelection(playlistIndex[, crop])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanremoveplaylistswitchplaylistindex" class="md-nav__link">
+    plman.RemovePlaylistSwitch(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanrenameplaylistplaylistindex-name" class="md-nav__link">
+    plman.RenamePlaylist(playlistIndex, name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetactiveplaylistcontext" class="md-nav__link">
+    plman.SetActivePlaylistContext()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetplaylistfocusitemplaylistindex-playlistitemindex" class="md-nav__link">
+    plman.SetPlaylistFocusItem(playlistIndex, playlistItemIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetplaylistselectionplaylistindex-affecteditems-state" class="md-nav__link">
+    plman.SetPlaylistSelection(playlistIndex, affectedItems, state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansetplaylistselectionsingleplaylistindex-playlistitemindex-state" class="md-nav__link">
+    plman.SetPlaylistSelectionSingle(playlistIndex, playlistItemIndex, state)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanshowautoplaylistuiplaylistindex" class="md-nav__link">
+    plman.ShowAutoPlaylistUI(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanshowplaylistlockuiplaylistindex" class="md-nav__link">
+    plman.ShowPlaylistLockUI(playlistIndex)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansortbyformatplaylistindex-pattern-selected_items_only" class="md-nav__link">
+    plman.SortByFormat(playlistIndex, pattern[, selected_items_only])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansortbyformatv2playlistindex-pattern-direction" class="md-nav__link">
+    plman.SortByFormatV2(playlistIndex, pattern[, direction])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmansortplaylistsbynamedirection" class="md-nav__link">
+    plman.SortPlaylistsByName([direction])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plmanundobackupplaylistindex" class="md-nav__link">
+    plman.UndoBackup(playlistIndex)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>plman</h1>
+
+<p><strong>Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plman.ActivePlaylist</td>
+<td><code>number</code></td>
+<td>read, write</td>
+<td>Could be <code>-1</code> if reading value and no playlist is active.</td>
+</tr>
+<tr>
+<td>plman.PlaybackOrder</td>
+<td><a href="../../flags/#playbackorder">PlaybackOrder</a></td>
+<td>read, write</td>
+<td></td>
+</tr>
+<tr>
+<td>plman.PlayingPlaylist</td>
+<td><code>number</code></td>
+<td>read</td>
+<td>Could be <code>-1</code> if not playing or playing item doesn't belong to any playlist.</td>
+</tr>
+<tr>
+<td>plman.PlaylistCount</td>
+<td><code>number</code></td>
+<td>read</td>
+<td></td>
+</tr>
+<tr>
+<td>plman.RecyclerCount</td>
+<td><code>number</code></td>
+<td>read</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Methods</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most methods require that the <code>playlistIndex</code> argument is valid. That means
+not <code>-1</code> and less than <code>plman.PlaylistCount</code>.</p>
+</div>
+<h2 id="plmanaddlocationsplaylistindex-paths-select"><code>plman.AddLocations(playlistIndex, paths[, select])</code><a class="headerlink" href="#plmanaddlocationsplaylistindex-paths-select" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid. Also, it must not be an autoplaylist or have a lock in place preventing the addition of new files.</td>
+</tr>
+<tr>
+<td>paths</td>
+<td><code>array</code></td>
+<td>Can be file paths/urls/playlists.</td>
+</tr>
+<tr>
+<td>select</td>
+<td><code>boolean</code></td>
+<td>Default <code>false</code>. If <code>true</code>, the active playlist will be set to the <code>playlistIndex</code>, the items will be selected and focus will be set to the first new item.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This operation is asynchronous and may take some time to complete if it's a large array.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;e:\\1.mp3&quot;</span><span class="p">];</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">AddLocations</span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="p">,</span><span class="w"> </span><span class="nx">arr</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanaddplaylistlockplaylistindex-flags"><code>plman.AddPlaylistLock(playlistIndex, flags)</code><a class="headerlink" href="#plmanaddplaylistlockplaylistindex-flags" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>flags</td>
+<td><a href="../../flags/#playlistlockfiltermask">PlaylistLockFilterMask</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns <code>true</code> on success, <code>false</code> if playlist already locked.</p>
+<p>See <a href="#plmanshowplaylistlockuiplaylistindex">plman.ShowPlaylistLockUI</a> first as that provides
+a dialog and is much more user friendly!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you can add a playlist lock, you must check
+there is no lock present already. If another component
+owns the lock, you have to use that component to
+remove it. If the lock is owned by <code>JScript Panel 3</code> then
+you must remove it first. This is because locks cannot be
+edited. You have to remove it and then add a new one
+with a new mask value.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">add_playlist_lock</span><span class="p">(</span><span class="nx">playlistIndex</span><span class="p">,</span><span class="w"> </span><span class="nx">flags</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// check if playlistIndex is valid</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">playlistIndex</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">playlistIndex</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">PlaylistCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">IsPlaylistLocked</span><span class="p">(</span><span class="nx">playlistIndex</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">GetPlaylistLockName</span><span class="p">(</span><span class="nx">playlistIndex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;JScript Panel 3&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// We own this lock so we can remove it.</span><span class="w"></span>
+<span class="w">                </span><span class="nx">plman</span><span class="p">.</span><span class="nx">RemovePlaylistLock</span><span class="p">(</span><span class="nx">playlistIndex</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// Locked but not ours. Nothing we can do.</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">AddPlaylistLock</span><span class="p">(</span><span class="nx">playlistIndex</span><span class="p">,</span><span class="w"> </span><span class="nx">flags</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// Available mask values</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_add</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_remove</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_reorder</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_replace</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_rename</span><span class="o">:</span><span class="w"> </span><span class="mf">16</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_remove_playlist</span><span class="o">:</span><span class="w"> </span><span class="mf">32</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">// Setting a single value:</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="p">.</span><span class="nx">filter_add</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// To set multiple values at once, use | like this:</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">flags2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="p">.</span><span class="nx">filter_add</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="p">.</span><span class="nx">filter_remove</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// You may add a value to existing flags using a bitwise operator like this:</span><span class="w"></span>
+<span class="nx">flags</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="p">.</span><span class="nx">filter_replace</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">//To remove a value, use &amp;= and ~ like this:</span><span class="w"></span>
+<span class="nx">flags</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="o">~</span><span class="nx">PlaylistLockFilterMask</span><span class="p">.</span><span class="nx">filter_replace</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanclearplaylistplaylistindex"><code>plman.ClearPlaylist(playlistIndex)</code><a class="headerlink" href="#plmanclearplaylistplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="plmanclearplaylistselectionplaylistindex"><code>plman.ClearPlaylistSelection(playlistIndex)</code><a class="headerlink" href="#plmanclearplaylistselectionplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="plmancreateautoplaylistplaylistindex-name-query-sort-flags"><code>plman.CreateAutoPlaylist(playlistIndex, name, query[, sort, flags])</code><a class="headerlink" href="#plmancreateautoplaylistplaylistindex-name-query-sort-flags" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>query</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>flags</td>
+<td><code>number</code></td>
+<td>Default <code>0</code>. Use <code>1</code> to force sort.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the index of the newly created <code>Autoplaylist</code>
+or <code>-1</code> on failure. The most likely cause of that
+would be an invalid query.</p>
+<h2 id="plmancreateplaylistplaylistindex-name"><code>plman.CreatePlaylist([playlistIndex, name])</code><a class="headerlink" href="#plmancreateplaylistplaylistindex-name" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the index of the newly created playlist.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm">Creates a new playlist last in the list and it</span>
+<span class="cm">will be named `New playlist` or have numbers appended if</span>
+<span class="cm">there are existing playlists with the same name. Using</span>
+<span class="cm">the return value, you can switch to it.</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">new_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">CreatePlaylist</span><span class="p">();</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">new_index</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanduplicateplaylistplaylistindex-name"><code>plman.DuplicatePlaylist(playlistIndex, name)</code><a class="headerlink" href="#plmanduplicateplaylistplaylistindex-name" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td>If you supply an empty string, the name of the original playlist is used.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the index of the newly created playlist
+which will be directly after the original. Only the content
+is duplicated, not the properties.</p>
+<h2 id="plmanexecuteplaylistdefaultactionplaylistindex-playlistitemindex"><code>plman.ExecutePlaylistDefaultAction(playlistIndex, playlistItemIndex)</code><a class="headerlink" href="#plmanexecuteplaylistdefaultactionplaylistindex-playlistitemindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>playlistItemIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<p>Starts playback by executing the default doubleclick action unless
+overridden by a lock to do something else.</p>
+<h2 id="plmanfindorcreateplaylistname-unlocked"><code>plman.FindOrCreatePlaylist(name, unlocked)</code><a class="headerlink" href="#plmanfindorcreateplaylistname-unlocked" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>unlocked</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, locked playlists are ignored when looking for existing playlists.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns index of named playlist or newly created playlist.</p>
+<h2 id="plmanfindplaylistname"><code>plman.FindPlaylist(name)</code><a class="headerlink" href="#plmanfindplaylistname" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td>Not case senstive.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the found index or <code>-1</code> on failure.</p>
+<h2 id="plmangetplayingitemlocation"><code>plman.GetPlayingItemLocation()</code><a class="headerlink" href="#plmangetplayingitemlocation" title="Permanent link">#</a></h2>
+<p>Returns an <a href="../../interfaces/IPlayingItemLocation">IPlayingItemLocation</a> instance.</p>
+<h2 id="plmangetplaylistfocusitemindexplaylistindex"><code>plman.GetPlaylistFocusItemIndex(playlistIndex)</code><a class="headerlink" href="#plmangetplaylistfocusitemindexplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns index or <code>-1</code> if nothing is selected.</p>
+<h2 id="plmangetplaylistitemcountplaylistindex"><code>plman.GetPlaylistItemCount(playlistIndex)</code><a class="headerlink" href="#plmangetplaylistitemcountplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>number</code>.</p>
+<h2 id="plmangetplaylistitemsplaylistindex"><code>plman.GetPlaylistItems(playlistIndex)</code><a class="headerlink" href="#plmangetplaylistitemsplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns an <a href="../../interfaces/IMetadbHandleList">IMetadbHandleList</a> instance.</p>
+<h2 id="plmangetplaylistlockfiltermaskplaylistindex"><code>plman.GetPlaylistLockFilterMask(playlistIndex)</code><a class="headerlink" href="#plmangetplaylistlockfiltermaskplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <a href="../../flags/#playlistlockfiltermask">PlaylistLockFilterMask</a> or
+<code>-1</code> if supplied with an invalid <code>playlistIndex</code>.</p>
+<p>Use this to determine the type(s) of locks applied to the specified playlist.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_add</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_remove</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_reorder</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_replace</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_rename</span><span class="o">:</span><span class="w"> </span><span class="mf">16</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_remove_playlist</span><span class="o">:</span><span class="w"> </span><span class="mf">32</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_default_action</span><span class="o">:</span><span class="w"> </span><span class="mf">64</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">GetPlaylistLockFilterMask</span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="p">)</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mask</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="p">.</span><span class="nx">filter_add</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Can&#39;t add files to this playlist&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmangetplaylistlocknameplaylistindex"><code>plman.GetPlaylistLockName(playlistIndex)</code><a class="headerlink" href="#plmangetplaylistlocknameplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns the name of the component that implemented
+the playlist lock or an empty string if the playlist
+is not locked.</p>
+<h2 id="plmangetplaylistnameplaylistindex"><code>plman.GetPlaylistName(playlistIndex)</code><a class="headerlink" href="#plmangetplaylistnameplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>string</code>.</p>
+<h2 id="plmangetplaylistselecteditemsplaylistindex"><code>plman.GetPlaylistSelectedItems(playlistIndex)</code><a class="headerlink" href="#plmangetplaylistselecteditemsplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns an <a href="../../interfaces/IMetadbHandleList">IMetadbHandleList</a> instance.</p>
+<h2 id="plmangetrecycleritemsindex"><code>plman.GetRecyclerItems(index)</code><a class="headerlink" href="#plmangetrecycleritemsindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns an <a href="../../interfaces/IMetadbHandleList">IMetadbHandleList</a> instance.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerCount</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// retrieve handles from first deleted playlist</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">handle_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">GetRecyclerItems</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmangetrecyclernameindex"><code>plman.GetRecyclerName(index)</code><a class="headerlink" href="#plmangetrecyclernameindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerCount</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// output name of first deleted playlist</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">GetRecyclerName</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmaninsertplaylistitemsplaylistindex-base-handle_list-select"><code>plman.InsertPlaylistItems(playlistIndex, base, handle_list[, select])</code><a class="headerlink" href="#plmaninsertplaylistitemsplaylistindex-base-handle_list-select" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>base</td>
+<td><code>number</code></td>
+<td>Position in playlist.</td>
+</tr>
+<tr>
+<td>handle_list</td>
+<td><a href="../../interfaces/IMetadbHandleList">IMetadbHandleList</a></td>
+<td></td>
+</tr>
+<tr>
+<td>select</td>
+<td><code>boolean</code></td>
+<td>Default <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="plmaninsertplaylistitemsfilterplaylistindex-base-handle_list-select"><code>plman.InsertPlaylistItemsFilter(playlistIndex, base, handle_list[, select])</code><a class="headerlink" href="#plmaninsertplaylistitemsfilterplaylistindex-base-handle_list-select" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>base</td>
+<td><code>number</code></td>
+<td>Position in playlist.</td>
+</tr>
+<tr>
+<td>handle_list</td>
+<td><a href="../../interfaces/IMetadbHandleList">IMetadbHandleList</a></td>
+<td></td>
+</tr>
+<tr>
+<td>select</td>
+<td><code>boolean</code></td>
+<td>Default <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<p>Same as above except any duplicates contained in <code>handle_list</code> are removed.</p>
+<h2 id="plmaninvertselectionplaylistindex"><code>plman.InvertSelection(playlistIndex)</code><a class="headerlink" href="#plmaninvertselectionplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="plmanisautoplaylistplaylistindex"><code>plman.IsAutoPlaylist(playlistIndex)</code><a class="headerlink" href="#plmanisautoplaylistplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<h2 id="plmanisplaylistitemselectedplaylistindex-playlistitemindex"><code>plman.IsPlaylistItemSelected(playlistIndex, playlistItemIndex)</code><a class="headerlink" href="#plmanisplaylistitemselectedplaylistindex-playlistitemindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>playlistItemIndex</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<h2 id="plmanisplaylistlockedplaylistindex"><code>plman.IsPlaylistLocked(playlistIndex)</code><a class="headerlink" href="#plmanisplaylistlockedplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It's advisable to use <a href="#plmangetplaylistlockfiltermaskplaylistindex">plman.GetPlaylistLockFilterMask</a>
+as this will let you determine what kind of locks
+are in place. For example, if a playlist only has a
+lock preventing you from deleting it, you can still
+add/remove files which you wouldn't be able determine
+from using <code>plman.IsPlaylistLocked</code> alone.</p>
+</div>
+<h2 id="plmanmoveplaylistfrom-to"><code>plman.MovePlaylist(from, to)</code><a class="headerlink" href="#plmanmoveplaylistfrom-to" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><code>number</code></td>
+<td>Must be valid and not equal to <code>from</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<h2 id="plmanmoveplaylistselectionplaylistindex-delta"><code>plman.MovePlaylistSelection(playlistIndex, delta)</code><a class="headerlink" href="#plmanmoveplaylistselectionplaylistindex-delta" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>delta</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only useful when the selection is contiguous. See the improved version just below.</p>
+</div>
+<h2 id="plmanmoveplaylistselectionv2playlistindex-new_pos"><code>plman.MovePlaylistSelectionV2(playlistIndex, new_pos)</code><a class="headerlink" href="#plmanmoveplaylistselectionv2playlistindex-new_pos" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>new_pos</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<p>Unlike <code>plman.MovePlaylistSelection</code>, this has
+full support for non-contiguous selections and
+all you have to do is supply the new position index.</p>
+<h2 id="plmanrecyclerpurgeaffecteditems"><code>plman.RecyclerPurge(affectedItems)</code><a class="headerlink" href="#plmanrecyclerpurgeaffecteditems" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>affectedItems</td>
+<td><code>array</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<p>Purges deleted playlists so they cannot be restored.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// first only</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerPurge</span><span class="p">([</span><span class="mf">0</span><span class="p">]);</span><span class="w"></span>
+
+<span class="c1">// first and third only</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerPurge</span><span class="p">([</span><span class="mf">0</span><span class="p">,</span><span class="mf">2</span><span class="p">]);</span><span class="w"></span>
+
+<span class="c1">// purges all deleted playlists</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerCount</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerPurge</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanrecyclerrestoreindex"><code>plman.RecyclerRestore(index)</code><a class="headerlink" href="#plmanrecyclerrestoreindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerCount</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// restore first deleted playlist</span><span class="w"></span>
+<span class="w">    </span><span class="nx">plman</span><span class="p">.</span><span class="nx">RecyclerRestore</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanremoveplaylistplaylistindex"><code>plman.RemovePlaylist(playlistIndex)</code><a class="headerlink" href="#plmanremoveplaylistplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If removing the active playlist, no playlist
+will be active after using this. You'll need to
+set it manually or use <a href="#plmanremoveplaylistswitchplaylistindex">plman.RemovePlaylistSwitch</a>
+instead.</p>
+</div>
+<h2 id="plmanremoveplaylistlockplaylistindex"><code>plman.RemovePlaylistLock(playlistIndex)</code><a class="headerlink" href="#plmanremoveplaylistlockplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only remove a playlist lock if it's
+owned by <code>JScript Panel 3</code>. You can check
+this with <a href="#plmangetplaylistlocknameplaylistindex">plman.GetPlaylistLockName</a>. See
+<a href="#plmanaddplaylistlockplaylistindex-flags">plman.AddPlaylistLock</a> for an example.</p>
+</div>
+<h2 id="plmanremoveplaylistsplaylistindexes"><code>plman.RemovePlaylists(playlistIndexes)</code><a class="headerlink" href="#plmanremoveplaylistsplaylistindexes" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndexes</td>
+<td><code>array</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// This would remove all empty playlists.</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">PlaylistCount</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">GetPlaylistItemCount</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">RemovePlaylists</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanremoveplaylistselectionplaylistindex-crop"><code>plman.RemovePlaylistSelection(playlistIndex[, crop])</code><a class="headerlink" href="#plmanremoveplaylistselectionplaylistindex-crop" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>crop</td>
+<td><code>boolean</code></td>
+<td>Default <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Removes selected items from playlist.</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">RemovePlaylistSelection</span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// Removes items that are NOT selected.</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">RemovePlaylistSelection</span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanremoveplaylistswitchplaylistindex"><code>plman.RemovePlaylistSwitch(playlistIndex)</code><a class="headerlink" href="#plmanremoveplaylistswitchplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<p>This automatically sets another playlist as
+active if removing the active playlist.</p>
+<h2 id="plmanrenameplaylistplaylistindex-name"><code>plman.RenamePlaylist(playlistIndex, name)</code><a class="headerlink" href="#plmanrenameplaylistplaylistindex-name" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<h2 id="plmansetactiveplaylistcontext"><code>plman.SetActivePlaylistContext()</code><a class="headerlink" href="#plmansetactiveplaylistcontext" title="Permanent link">#</a></h2>
+<p>No return value.</p>
+<p>Workaround so you can use the <code>Edit</code> menu
+when your panel has focus and a dedicated
+playlist viewer doesn't.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Once on startup.</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">SetActivePlaylistContext</span><span class="p">();</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">on_focus</span><span class="p">(</span><span class="nx">is_focused</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">is_focused</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// When the panel gets focus but not on every click.</span><span class="w"></span>
+<span class="w">        </span><span class="nx">plman</span><span class="p">.</span><span class="nx">SetActivePlaylistContext</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmansetplaylistfocusitemplaylistindex-playlistitemindex"><code>plman.SetPlaylistFocusItem(playlistIndex, playlistItemIndex)</code><a class="headerlink" href="#plmansetplaylistfocusitemplaylistindex-playlistitemindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>playlistItemIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="plmansetplaylistselectionplaylistindex-affecteditems-state"><code>plman.SetPlaylistSelection(playlistIndex, affectedItems, state)</code><a class="headerlink" href="#plmansetplaylistselectionplaylistindex-affecteditems-state" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>affectedItems</td>
+<td><code>array</code></td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Selects first, third and fifth tracks in playlist.</span><span class="w"></span>
+<span class="c1">// This does not affect other selected items.</span><span class="w"></span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">];</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">SetPlaylistSelection</span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="p">,</span><span class="w"> </span><span class="nx">arr</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmansetplaylistselectionsingleplaylistindex-playlistitemindex-state"><code>plman.SetPlaylistSelectionSingle(playlistIndex, playlistItemIndex, state)</code><a class="headerlink" href="#plmansetplaylistselectionsingleplaylistindex-playlistitemindex-state" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>playlistItemIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>state</td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Deselects first playlist item.</span><span class="w"></span>
+<span class="c1">// Only works when it is already selected!</span><span class="w"></span>
+
+<span class="nx">plman</span><span class="p">.</span><span class="nx">SetPlaylistSelectionSingle</span><span class="p">(</span><span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Selects last item in playlist.</span><span class="w"></span>
+<span class="c1">// This does not affect other selected items.</span><span class="w"></span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">ap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">ActivePlaylist</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plman</span><span class="p">.</span><span class="nx">GetPlaylistItemCount</span><span class="p">(</span><span class="nx">ap</span><span class="p">);</span><span class="w"></span>
+<span class="nx">plman</span><span class="p">.</span><span class="nx">SetPlaylistSelectionSingle</span><span class="p">(</span><span class="nx">ap</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="plmanshowautoplaylistuiplaylistindex"><code>plman.ShowAutoPlaylistUI(playlistIndex)</code><a class="headerlink" href="#plmanshowautoplaylistuiplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value. It will be <code>false</code> if
+the playlist was not an <code>Autoplaylist</code>.</p>
+<h2 id="plmanshowplaylistlockuiplaylistindex"><code>plman.ShowPlaylistLockUI(playlistIndex)</code><a class="headerlink" href="#plmanshowplaylistlockuiplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value. The value will
+be <code>false</code> if the playlist is an <code>Autoplaylist</code>
+or the lock is owned by another component.</p>
+<p>The dialog is <code>modal</code> which means code directly
+after it will not run until it is dismissed.</p>
+<p>Shows popup window letting you toggle the
+various lock options on/off.</p>
+<h2 id="plmansortbyformatplaylistindex-pattern-selected_items_only"><code>plman.SortByFormat(playlistIndex, pattern[, selected_items_only])</code><a class="headerlink" href="#plmansortbyformatplaylistindex-pattern-selected_items_only" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td><code>string</code></td>
+<td>Title formatting pattern to sort by. Use "" to randomise the order.</td>
+</tr>
+<tr>
+<td>selected_items_only</td>
+<td><code>boolean</code></td>
+<td>Default <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<h2 id="plmansortbyformatv2playlistindex-pattern-direction"><code>plman.SortByFormatV2(playlistIndex, pattern[, direction])</code><a class="headerlink" href="#plmansortbyformatv2playlistindex-pattern-direction" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td><code>string</code></td>
+<td>Title formatting pattern to sort by.</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><code>number</code></td>
+<td>Default <code>1</code>. Use <code>1</code> for ascending, <code>-1</code> for descending.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a <code>boolean</code> value.</p>
+<h2 id="plmansortplaylistsbynamedirection"><code>plman.SortPlaylistsByName([direction])</code><a class="headerlink" href="#plmansortplaylistsbynamedirection" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direction</td>
+<td><code>number</code></td>
+<td>Default <code>1</code>. Use <code>1</code> for ascending, <code>-1</code> for descending.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<h2 id="plmanundobackupplaylistindex"><code>plman.UndoBackup(playlistIndex)</code><a class="headerlink" href="#plmanundobackupplaylistindex" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playlistIndex</td>
+<td><code>number</code></td>
+<td>Must be valid.</td>
+</tr>
+</tbody>
+</table>
+<p>No return value.</p>
+<p>Call before using other <code>plman</code> methods that
+add/remove/reorder playlist items so a history
+will be available from the <code>Edit</code> menu.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../fb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: fb" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              fb
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../utils/" class="md-footer__link md-footer__link--next" aria-label="Next: utils" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              utils
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 marc2003
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/marc2k3" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

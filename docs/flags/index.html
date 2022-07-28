@@ -1,0 +1,1673 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Flags - JScript Panel 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dwrite_font_weight" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="JScript Panel 3" class="md-header__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JScript Panel 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Flags
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../gallery/" class="md-tabs__link">
+      Gallery
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Docs
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="JScript Panel 3" class="md-nav__button md-logo" aria-label="JScript Panel 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8Z"/></svg>
+
+    </a>
+    JScript Panel 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Requirements & Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-window/" class="md-nav__link">
+        Configuration Window
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changes/" class="md-nav__link">
+        Changes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        Tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preprocessors/" class="md-nav__link">
+        Preprocessors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Flags
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Flags
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_font_weight" class="md-nav__link">
+    DWRITE_FONT_WEIGHT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_font_style" class="md-nav__link">
+    DWRITE_FONT_STYLE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_font_stretch" class="md-nav__link">
+    DWRITE_FONT_STRETCH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_text_alignment" class="md-nav__link">
+    DWRITE_TEXT_ALIGNMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_paragraph_alignment" class="md-nav__link">
+    DWRITE_PARAGRAPH_ALIGNMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_word_wrapping" class="md-nav__link">
+    DWRITE_WORD_WRAPPING
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_trimming_granularity" class="md-nav__link">
+    DWRITE_TRIMMING_GRANULARITY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wicbitmaptransform" class="md-nav__link">
+    WICBitmapTransform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox-buttons" class="md-nav__link">
+    MessageBox Buttons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox-icons" class="md-nav__link">
+    MessageBox Icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox-return-values" class="md-nav__link">
+    MessageBox Return Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendmenuitem-flags" class="md-nav__link">
+    AppendMenuItem Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trackpopupmenu-flags" class="md-nav__link">
+    TrackPopupMenu Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse-mask-values" class="md-nav__link">
+    Mouse Mask Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setcursor-values" class="md-nav__link">
+    SetCursor Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file_attribute" class="md-nav__link">
+    FILE_ATTRIBUTE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-mask-values" class="md-nav__link">
+    Keyboard Mask Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#albumartid" class="md-nav__link">
+    AlbumArtId
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colourtypecui" class="md-nav__link">
+    ColourTypeCUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colourtypedui" class="md-nav__link">
+    ColourTypeDUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonttypecui" class="md-nav__link">
+    FontTypeCUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonttypedui" class="md-nav__link">
+    FontTypeDUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playlistlockfiltermask" class="md-nav__link">
+    PlaylistLockFilterMask
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replaygainmode" class="md-nav__link">
+    ReplaygainMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackorder" class="md-nav__link">
+    PlaybackOrder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackqueueorigin" class="md-nav__link">
+    PlaybackQueueOrigin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackstartingcmd" class="md-nav__link">
+    PlaybackStartingCMD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackstopreason" class="md-nav__link">
+    PlaybackStopReason
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectiontype" class="md-nav__link">
+    SelectionType
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imageeffect" class="md-nav__link">
+    ImageEffect
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../callbacks/" class="md-nav__link">
+        Callbacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Interfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Interfaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Interfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IContextMenuManager/" class="md-nav__link">
+        IContextMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IDropAction/" class="md-nav__link">
+        IDropAction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IFileInfo/" class="md-nav__link">
+        IFileInfo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IJSGraphics/" class="md-nav__link">
+        IJSGraphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IJSImage/" class="md-nav__link">
+        IJSImage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMainMenuManager/" class="md-nav__link">
+        IMainMenuManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMenuObj/" class="md-nav__link">
+        IMenuObj
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMetadbHandle/" class="md-nav__link">
+        IMetadbHandle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IMetadbHandleList/" class="md-nav__link">
+        IMetadbHandleList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IPlayingItemLocation/" class="md-nav__link">
+        IPlayingItemLocation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IProfiler/" class="md-nav__link">
+        IProfiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ISelectionHolder/" class="md-nav__link">
+        ISelectionHolder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ITextLayout/" class="md-nav__link">
+        ITextLayout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/IThemeManager/" class="md-nav__link">
+        IThemeManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ITitleFormat/" class="md-nav__link">
+        ITitleFormat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/ITooltip/" class="md-nav__link">
+        ITooltip
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
+          Namespaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Namespaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Namespaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/console/" class="md-nav__link">
+        console
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/fb/" class="md-nav__link">
+        fb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/plman/" class="md-nav__link">
+        plman
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespaces/window/" class="md-nav__link">
+        window
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_font_weight" class="md-nav__link">
+    DWRITE_FONT_WEIGHT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_font_style" class="md-nav__link">
+    DWRITE_FONT_STYLE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_font_stretch" class="md-nav__link">
+    DWRITE_FONT_STRETCH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_text_alignment" class="md-nav__link">
+    DWRITE_TEXT_ALIGNMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_paragraph_alignment" class="md-nav__link">
+    DWRITE_PARAGRAPH_ALIGNMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_word_wrapping" class="md-nav__link">
+    DWRITE_WORD_WRAPPING
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwrite_trimming_granularity" class="md-nav__link">
+    DWRITE_TRIMMING_GRANULARITY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wicbitmaptransform" class="md-nav__link">
+    WICBitmapTransform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox-buttons" class="md-nav__link">
+    MessageBox Buttons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox-icons" class="md-nav__link">
+    MessageBox Icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox-return-values" class="md-nav__link">
+    MessageBox Return Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendmenuitem-flags" class="md-nav__link">
+    AppendMenuItem Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trackpopupmenu-flags" class="md-nav__link">
+    TrackPopupMenu Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse-mask-values" class="md-nav__link">
+    Mouse Mask Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setcursor-values" class="md-nav__link">
+    SetCursor Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file_attribute" class="md-nav__link">
+    FILE_ATTRIBUTE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-mask-values" class="md-nav__link">
+    Keyboard Mask Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#albumartid" class="md-nav__link">
+    AlbumArtId
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colourtypecui" class="md-nav__link">
+    ColourTypeCUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colourtypedui" class="md-nav__link">
+    ColourTypeDUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonttypecui" class="md-nav__link">
+    FontTypeCUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonttypedui" class="md-nav__link">
+    FontTypeDUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playlistlockfiltermask" class="md-nav__link">
+    PlaylistLockFilterMask
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replaygainmode" class="md-nav__link">
+    ReplaygainMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackorder" class="md-nav__link">
+    PlaybackOrder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackqueueorigin" class="md-nav__link">
+    PlaybackQueueOrigin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackstartingcmd" class="md-nav__link">
+    PlaybackStartingCMD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbackstopreason" class="md-nav__link">
+    PlaybackStopReason
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectiontype" class="md-nav__link">
+    SelectionType
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imageeffect" class="md-nav__link">
+    ImageEffect
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Flags</h1>
+
+<p>All of these are provided in <code>helpers.txt</code> bundled with the component. You
+can import it like this.</p>
+<div class="highlight"><pre><span></span><code>// ==PREPROCESSOR==
+// @import &quot;%fb2k_component_path%helpers.txt&quot;
+// ==/PREPROCESSOR==
+</code></pre></div>
+<p>See <a href="../preprocessors">Preprocessors</a>.</p>
+<h2 id="dwrite_font_weight">DWRITE_FONT_WEIGHT<a class="headerlink" href="#dwrite_font_weight" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_THIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_EXTRA_LIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_ULTRA_LIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_LIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">300</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_SEMI_LIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">350</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_NORMAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_REGULAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_MEDIUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_DEMI_BOLD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">600</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_SEMI_BOLD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">600</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_BOLD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">700</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_EXTRA_BOLD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">800</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_ULTRA_BOLD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">800</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_BLACK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">900</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_HEAVY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">900</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_EXTRA_BLACK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">950</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_WEIGHT_ULTRA_BLACK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">950</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="dwrite_font_style">DWRITE_FONT_STYLE<a class="headerlink" href="#dwrite_font_style" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STYLE_NORMAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STYLE_OBLIQUE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STYLE_ITALIC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="dwrite_font_stretch">DWRITE_FONT_STRETCH<a class="headerlink" href="#dwrite_font_stretch" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_ULTRA_CONDENSED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_EXTRA_CONDENSED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_CONDENSED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_SEMI_CONDENSED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_NORMAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_MEDIUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_SEMI_EXPANDED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_EXPANDED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_EXTRA_EXPANDED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_FONT_STRETCH_ULTRA_EXPANDED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="dwrite_text_alignment">DWRITE_TEXT_ALIGNMENT<a class="headerlink" href="#dwrite_text_alignment" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_TEXT_ALIGNMENT_LEADING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_TEXT_ALIGNMENT_TRAILING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_TEXT_ALIGNMENT_CENTER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_TEXT_ALIGNMENT_JUSTIFIED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="dwrite_paragraph_alignment">DWRITE_PARAGRAPH_ALIGNMENT<a class="headerlink" href="#dwrite_paragraph_alignment" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_PARAGRAPH_ALIGNMENT_NEAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_PARAGRAPH_ALIGNMENT_FAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_PARAGRAPH_ALIGNMENT_CENTER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="dwrite_word_wrapping">DWRITE_WORD_WRAPPING<a class="headerlink" href="#dwrite_word_wrapping" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_WORD_WRAPPING_WRAP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_WORD_WRAPPING_NO_WRAP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_WORD_WRAPPING_EMERGENCY_BREAK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_WORD_WRAPPING_WHOLE_WORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_WORD_WRAPPING_CHARACTER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="dwrite_trimming_granularity">DWRITE_TRIMMING_GRANULARITY<a class="headerlink" href="#dwrite_trimming_granularity" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_TRIMMING_GRANULARITY_NONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_TRIMMING_GRANULARITY_CHARACTER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">DWRITE_TRIMMING_GRANULARITY_WORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="wicbitmaptransform">WICBitmapTransform<a class="headerlink" href="#wicbitmaptransform" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">WICBitmapTransformRotate0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">WICBitmapTransformRotate90</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">WICBitmapTransformRotate180</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">WICBitmapTransformRotate270</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">WICBitmapTransformFlipHorizontal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">WICBitmapTransformFlipVertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">16</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="messagebox-buttons">MessageBox Buttons<a class="headerlink" href="#messagebox-buttons" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">MB_OK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MB_OKCANCEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MB_ABORTRETRYIGNORE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MB_YESNOCANCEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MB_YESNO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="messagebox-icons">MessageBox Icons<a class="headerlink" href="#messagebox-icons" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">MB_ICONHAND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">16</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MB_ICONQUESTION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MB_ICONEXCLAMATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">48</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MB_ICONASTERISK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">64</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="messagebox-return-values">MessageBox Return Values<a class="headerlink" href="#messagebox-return-values" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">IDOK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDCANCEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDABORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDRETRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDIGNORE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDYES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDNO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="appendmenuitem-flags">AppendMenuItem Flags<a class="headerlink" href="#appendmenuitem-flags" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">MF_SEPARATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000800</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_ENABLED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_GRAYED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000001</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_DISABLED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000002</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_UNCHECKED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_CHECKED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000008</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_STRING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_MENUBARBREAK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000020</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MF_MENUBREAK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000040</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// var MF_BITMAP; // do not use</span><span class="w"></span>
+<span class="c1">// var MF_OWNERDRAW // do not use</span><span class="w"></span>
+<span class="c1">// var MF_POPUP // do not use</span><span class="w"></span>
+</code></pre></div>
+<p><a href="https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-appendmenua">https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-appendmenua</a></p>
+<h2 id="trackpopupmenu-flags">TrackPopupMenu Flags<a class="headerlink" href="#trackpopupmenu-flags" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">TPM_LEFTALIGN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_CENTERALIGN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0004</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_RIGHTALIGN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0008</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_TOPALIGN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_VCENTERALIGN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0010</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_BOTTOMALIGN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0020</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_HORIZONTAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_VERTICAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0040</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_HORPOSANIMATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0400</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_HORNEGANIMATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0800</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_VERPOSANIMATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_VERNEGANIMATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">TPM_NOANIMATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4000</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p><a href="https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-trackpopupmenu">https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-trackpopupmenu</a></p>
+<h2 id="mouse-mask-values">Mouse Mask Values<a class="headerlink" href="#mouse-mask-values" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">MK_LBUTTON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0001</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MK_RBUTTON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0002</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MK_SHIFT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0004</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MK_CONTROL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0008</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MK_MBUTTON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0010</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MK_XBUTTON1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0020</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">MK_XBUTTON2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0040</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="setcursor-values">SetCursor Values<a class="headerlink" href="#setcursor-values" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">IDC_ARROW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32512</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_IBEAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32513</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_WAIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32514</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_CROSS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32515</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_UPARROW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32516</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32640</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_ICON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32641</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_SIZENWSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32642</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_SIZENESW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32643</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_SIZEWE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32644</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_SIZENS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32645</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_SIZEALL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32646</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_NO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32648</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_APPSTARTING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32650</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_HAND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32649</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">IDC_HELP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32651</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="file_attribute">FILE_ATTRIBUTE<a class="headerlink" href="#file_attribute" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_READONLY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000001</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_HIDDEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000002</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_SYSTEM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000004</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_DIRECTORY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000010</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_ARCHIVE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000020</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_NORMAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000080</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_TEMPORARY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000100</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_SPARSE_FILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000200</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_REPARSE_POINT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000400</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_COMPRESSED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00000800</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_OFFLINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00001000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00002000</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">FILE_ATTRIBUTE_ENCRYPTED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00004000</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// var FILE_ATTRIBUTE_DEVICE // do not use</span><span class="w"></span>
+<span class="c1">// var FILE_ATTRIBUTE_VIRTUAL // do not use</span><span class="w"></span>
+</code></pre></div>
+<p><a href="http://msdn.microsoft.com/en-us/library/ee332330%28VS.85%29.aspx">http://msdn.microsoft.com/en-us/library/ee332330%28VS.85%29.aspx</a></p>
+<h2 id="keyboard-mask-values">Keyboard Mask Values<a class="headerlink" href="#keyboard-mask-values" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">VK_BACK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x08</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_TAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x09</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_RETURN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0D</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_SHIFT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_CONTROL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x11</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_ALT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x12</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_ESCAPE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1B</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_PGUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x21</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_PGDN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x22</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_END</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x23</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_HOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x24</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_LEFT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x25</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_UP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x26</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_RIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x27</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_DOWN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x28</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_INSERT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2D</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_DELETE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2E</span><span class="p">;</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">VK_SPACEBAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x20</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="albumartid">AlbumArtId<a class="headerlink" href="#albumartid" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">AlbumArtId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">front</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">back</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">disc</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">icon</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">artist</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="colourtypecui">ColourTypeCUI<a class="headerlink" href="#colourtypecui" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ColourTypeCUI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">text</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">selection_text</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">inactive_selection_text</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">background</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">selection_background</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">inactive_selection_background</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">active_item_frame</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="colourtypedui">ColourTypeDUI<a class="headerlink" href="#colourtypedui" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ColourTypeDUI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">text</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">background</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">highlight</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">selection</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="fonttypecui">FontTypeCUI<a class="headerlink" href="#fonttypecui" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">FontTypeCUI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">items</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">labels</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="fonttypedui">FontTypeDUI<a class="headerlink" href="#fonttypedui" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">FontTypeDUI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">defaults</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">tabs</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">lists</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">playlists</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">statusbar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="playlistlockfiltermask">PlaylistLockFilterMask<a class="headerlink" href="#playlistlockfiltermask" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">PlaylistLockFilterMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_add</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_remove</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_reorder</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_replace</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_rename</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">16</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_remove_playlist</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">32</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">filter_default_action</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">64</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="replaygainmode">ReplaygainMode<a class="headerlink" href="#replaygainmode" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ReplaygainMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">None</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Track</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Album</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Track_Album_By_Playback_Order</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="playbackorder">PlaybackOrder<a class="headerlink" href="#playbackorder" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">PlaybackOrder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Default</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Repeat_Playlist</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Repeat_Track</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Random</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Shuffle_tracks</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Shuffle_albums</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Shuffle_folders</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="playbackqueueorigin">PlaybackQueueOrigin<a class="headerlink" href="#playbackqueueorigin" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">PlaybackQueueOrigin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">user_added</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">user_removed</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">playback_advance</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="playbackstartingcmd">PlaybackStartingCMD<a class="headerlink" href="#playbackstartingcmd" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">PlaybackStartingCMD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">play</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">next</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">prev</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">settrack</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">rand</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">resume</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="playbackstopreason">PlaybackStopReason<a class="headerlink" href="#playbackstopreason" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">PlaybackStopReason</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">user</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">eof</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">starting_another</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="selectiontype">SelectionType<a class="headerlink" href="#selectiontype" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">SelectionType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kc">undefined</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">active_playlist_selection</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">caller_active_playlist</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">playlist_manager</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">now_playing</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">keyboard_shortcut_list</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">media_library_viewer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h2 id="imageeffect">ImageEffect<a class="headerlink" href="#imageeffect" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ImageEffect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">grayscale</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">invert</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">sepia</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../preprocessors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Preprocessors" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Preprocessors
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../callbacks/" class="md-footer__link md-footer__link--next" aria-label="Next: Callbacks" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Callbacks
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 marc2003
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/marc2k3" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
